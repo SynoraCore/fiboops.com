@@ -1,0 +1,26 @@
+---
+import SeoHead from '../components/SeoHead.astro';
+import type { Locale } from '../i18n/messages';
+
+type Props = {
+  title: string;
+  description: string;
+  locale: Locale;
+  path: string;
+};
+
+const { title, description, locale, path } = Astro.props;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <SeoHead title={title} description={description} locale={locale} path={path} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+

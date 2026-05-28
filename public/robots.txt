@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fiboops.com/sitemap-index.xml
+

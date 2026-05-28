@@ -1,0 +1,40 @@
+---
+import type { Locale } from '../i18n/messages';
+
+type Props = {
+  title: string;
+  description: string;
+  locale: Locale;
+  path: string; // "/", "/en", "/es"
+};
+
+const { title, description, locale, path } = Astro.props;
+
+const origin = 'https://fiboops.com';
+const canonicalUrl = new URL(path === '/' ? '/' : `${path}/`, origin).toString();
+const alts = [
+  { hrefLang: 'pt-BR', href: new URL('/', origin).toString() },
+  { hrefLang: 'en', href: new URL('/en/', origin).toString() },
+  { hrefLang: 'es', href: new URL('/es/', origin).toString() },
+  { hrefLang: 'x-default', href: new URL('/', origin).toString() }
+];
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+
+<link rel="canonical" href={canonicalUrl} />
+{alts.map((a) => (
+  <link rel="alternate" hrefLang={a.hrefLang} href={a.href} />
+))}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Fiboops" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta http-equiv="content-language" content={locale} />
+

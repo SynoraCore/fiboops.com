@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { messages } from '../../i18n/messages';
+
+const m = messages.en;
+const title = 'Synora by Fiboops';
+const description = m.hero.subtitle;
+---
+
+<BaseLayout title={title} description={description} locale="en" path="/en">
+  <main>
+    <nav>
+      <a href="#ecosystem">{m.nav.ecosystem}</a>
+      <a href="#infrastructure">{m.nav.infrastructure}</a>
+      <a href="#technology">{m.nav.technology}</a>
+      <a href="#origin">{m.nav.origin}</a>
+      <a href="#contact">{m.nav.contact}</a>
+      <a href="#contact">{m.nav.cta}</a>
+      <span style="margin-left:16px;">
+        <a href="/">PT</a> · <a href="/es/">ES</a>
+      </span>
+    </nav>
+
+    <header>
+      <h1>{m.hero.h1}</h1>
+      <p>{m.hero.subtitle}</p>
+      <p>{m.hero.text}</p>
+      <p>
+        <a href="#ecosystem">{m.hero.cta1}</a> · <a href="#ecosystem">{m.hero.cta2}</a> ·
+        <a href="#contact">{m.hero.cta3}</a>
+      </p>
+      <small>{m.hero.microcopy}</small>
+    </header>
+  </main>
+</BaseLayout>
+
