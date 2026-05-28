@@ -19,10 +19,10 @@ const modules = [
 ---
 
 <BaseLayout title={title} description={description} locale="pt-BR" path="/">
-  <div class="relative isolate min-h-dvh bg-[#071827]">
-    <Background />
+  <div class="relative isolate bg-[#071827]">
 
-    <header class="relative z-10">
+    <header class="relative z-10 min-h-dvh overflow-hidden">
+      <Background />
       <div class="mx-auto max-w-6xl px-6">
         <nav class="flex items-center justify-between py-7">
           <div class="flex items-center gap-3">
@@ -101,7 +101,7 @@ const modules = [
       </div>
     </header>
 
-    <main class="relative z-10">
+    <main class="relative z-10 bg-[#071827]">
       <section id="ecosystem" class="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div class="max-w-2xl">
           <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">
