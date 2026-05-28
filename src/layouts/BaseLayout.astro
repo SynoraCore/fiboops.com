@@ -20,7 +20,7 @@ const { title, description, locale, path } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <SeoHead title={title} description={description} locale={locale} path={path} />
   </head>
-  <body class="antialiased">
+  <body class="antialiased" style="isolation:isolate;">
     <slot />
   </body>
 </html>
