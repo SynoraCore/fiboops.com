@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 import SeoHead from '../components/SeoHead.astro';
 import type { Locale } from '../i18n/messages';
 
@@ -19,7 +20,7 @@ const { title, description, locale, path } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <SeoHead title={title} description={description} locale={locale} path={path} />
   </head>
-  <body>
+  <body class="antialiased">
     <slot />
   </body>
 </html>

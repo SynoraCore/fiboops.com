@@ -1,52 +1,226 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Background from '../components/Background.astro';
 import { messages } from '../i18n/messages';
 
 const m = messages['pt-BR'];
 const title = 'Synora by Fiboops';
-const description = m.hero.subtitle;
+const description =
+  'Infraestrutura inteligente baseada em IA para automação, workflows operacionais e ecossistemas digitais.';
+
+const modules = [
+  { name: 'Synora Finance', desc: 'Infraestrutura financeira inteligente.' },
+  { name: 'Synora Mediadora', desc: 'Mediação digital e reorganização operacional.' },
+  { name: 'Synora Tourism', desc: 'Inteligência aplicada ao turismo e hospitalidade.' },
+  { name: 'Synora Audio', desc: 'Infraestrutura IA para creator economy.' },
+  { name: 'Guardian AI', desc: 'Governança e validação operacional.' },
+  { name: 'Synora Core', desc: 'Núcleo central do ecossistema.' }
+];
 ---
 
 <BaseLayout title={title} description={description} locale="pt-BR" path="/">
-  <main>
-    <nav>
-      <a href="#ecosystem">{m.nav.ecosystem}</a>
-      <a href="#infrastructure">{m.nav.infrastructure}</a>
-      <a href="#technology">{m.nav.technology}</a>
-      <a href="#origin">{m.nav.origin}</a>
-      <a href="#contact">{m.nav.contact}</a>
-      <a href="#contact">{m.nav.cta}</a>
-      <span style="margin-left:16px;">
-        <a href="/en/">EN</a> · <a href="/es/">ES</a>
-      </span>
-    </nav>
+  <div class="relative min-h-dvh">
+    <Background />
 
-    <header>
-      <h1>{m.hero.h1}</h1>
-      <p>{m.hero.subtitle}</p>
-      <p>{m.hero.text}</p>
-      <p>
-        <a href="#ecosystem">{m.hero.cta1}</a> · <a href="#ecosystem">{m.hero.cta2}</a> ·
-        <a href="#contact">{m.hero.cta3}</a>
-      </p>
-      <small>{m.hero.microcopy}</small>
+    <header class="relative">
+      <div class="mx-auto max-w-6xl px-6">
+        <nav class="flex items-center justify-between py-7">
+          <div class="flex items-center gap-3">
+            <div
+              class="h-8 w-8 rounded-xl bg-white/5 ring-1 ring-white/10"
+              aria-hidden="true"></div>
+            <div class="text-sm tracking-wide text-white/85">
+              <span class="font-semibold">Synora</span>
+              <span class="text-white/45"> by </span>
+              <span class="text-white/70">Fiboops</span>
+            </div>
+          </div>
+
+          <div class="hidden items-center gap-6 text-sm text-white/70 md:flex">
+            <a class="hover:text-white" href="#ecosystem">{m.nav.ecosystem}</a>
+            <a class="hover:text-white" href="#infrastructure">{m.nav.infrastructure}</a>
+            <a class="hover:text-white" href="#technology">{m.nav.technology}</a>
+            <a class="hover:text-white" href="#origin">{m.nav.origin}</a>
+            <a class="hover:text-white" href="#contact">{m.nav.contact}</a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <a
+              class="rounded-full bg-white/5 px-3 py-1 text-xs text-white/70 ring-1 ring-white/10 hover:bg-white/10"
+              href="/en/">EN</a>
+            <a
+              class="rounded-full bg-white/5 px-3 py-1 text-xs text-white/70 ring-1 ring-white/10 hover:bg-white/10"
+              href="/es/">ES</a>
+            <a
+              class="hidden rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-900 hover:bg-white/90 md:inline-flex"
+              href="#contact">{m.nav.cta}</a>
+          </div>
+        </nav>
+
+        <section class="relative pb-20 pt-16 md:pb-28 md:pt-24">
+          <div class="max-w-3xl">
+            <p
+              class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs text-white/70 ring-1 ring-white/10">
+              <span class="h-1.5 w-1.5 rounded-full bg-cyan-300/90"></span>
+              Enterprise futurista • IA operacional • Governance by design
+            </p>
+
+            <h1 class="mt-8 text-5xl font-semibold tracking-tight text-white md:text-7xl">
+              {m.hero.h1}
+            </h1>
+
+            <p class="mt-6 text-lg leading-relaxed text-white/75 md:text-xl">
+              {description}
+            </p>
+
+            <p class="mt-4 text-base leading-relaxed text-white/65">
+              {m.hero.text}
+            </p>
+
+            <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#ecosystem"
+                class="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90">
+                Explorar Ecossistema
+              </a>
+              <a
+                href="#infrastructure"
+                class="inline-flex items-center justify-center rounded-2xl bg-white/5 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/12 hover:bg-white/10">
+                Conhecer a Plataforma
+              </a>
+            </div>
+
+            <div class="mt-10 grid grid-cols-2 gap-3 text-xs text-white/55 sm:max-w-xl sm:grid-cols-4">
+              <div class="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">Cloud-first</div>
+              <div class="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">Modular</div>
+              <div class="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">Observável</div>
+              <div class="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">Enterprise-ready</div>
+            </div>
+          </div>
+        </section>
+      </div>
     </header>
 
-    <section id="ecosystem">
-      <h2>O Ecossistema</h2>
-    </section>
-    <section id="infrastructure">
-      <h2>Infraestrutura</h2>
-    </section>
-    <section id="origin">
-      <h2>Origem</h2>
-    </section>
-    <section id="technology">
-      <h2>Tecnologia</h2>
-    </section>
-    <section id="contact">
-      <h2>Contato</h2>
-    </section>
-  </main>
+    <main class="relative">
+      <section id="ecosystem" class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            Um ecossistema inteligente vivo
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-white/65">
+            Módulos especializados, integrados por um núcleo comum. Cada camada resolve uma parte da operação —
+            com interoperabilidade, governança e escala.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-4 md:grid-cols-2">
+          {modules.map((mod, idx) => (
+            <div
+              class="group rounded-3xl bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur-sm transition hover:bg-white/7"
+              style={`transform: translateY(${(idx % 2) * 6}px);`}
+            >
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">{mod.name}</h3>
+                <span class="text-xs text-white/45">module</span>
+              </div>
+              <p class="mt-2 text-sm leading-relaxed text-white/65">{mod.desc}</p>
+              <div class="mt-5 h-px w-full bg-gradient-to-r from-white/0 via-white/15 to-white/0"></div>
+              <p class="mt-4 text-xs text-white/50">
+                Conectado ao Core • Fluxos operacionais • Camada de governança
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="infrastructure" class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div class="grid gap-10 md:grid-cols-2 md:items-start">
+          <div>
+            <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+              Infraestrutura invisível operando em escala
+            </h2>
+            <p class="mt-4 text-base leading-relaxed text-white/65">
+              IA, automação e integração para transformar processos em operações digitais controladas, mensuráveis
+              e escaláveis.
+            </p>
+          </div>
+          <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur-sm">
+            <ul class="space-y-4 text-sm text-white/70">
+              <li><span class="text-white">IA aplicada</span> — triagem, decisão e execução assistida.</li>
+              <li><span class="text-white">Automação</span> — workflows, gatilhos, validações e filas.</li>
+              <li><span class="text-white">Middleware</span> — integração de dados, sistemas e canais com observabilidade.</li>
+              <li><span class="text-white">Orquestração</span> — módulos independentes coordenados por um Core comum.</li>
+              <li><span class="text-white">Confiabilidade</span> — cloud-first com resiliência e performance.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="origin" class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div class="rounded-4xl rounded-[32px] bg-white/5 p-10 ring-1 ring-white/10 backdrop-blur-sm">
+          <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">A evolução da Fiboops</h2>
+          <p class="mt-4 text-base leading-relaxed text-white/65">
+            A Synora nasceu da evolução da Fiboops, expandindo uma visão inicialmente focada em soluções financeiras
+            para uma infraestrutura inteligente de automação operacional baseada em IA.
+          </p>
+          <p class="mt-4 text-sm text-white/55">
+            <span class="text-white/75">Fiboops</span> é a raiz e a holding operacional. <span class="text-white/75">Synora</span> é o ecossistema.
+          </p>
+        </div>
+      </section>
+
+      <section id="technology" class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            Fundamentos tecnológicos
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-white/65">
+            Arquitetura modular, automação inteligente e governança para operações críticas.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+          {[
+            'Artificial Intelligence',
+            'Machine Learning',
+            'Intelligent Automation',
+            'Cloud Infrastructure',
+            'Middleware Architecture',
+            'Governance Layer',
+            'Operational Intelligence',
+            'Digital Ecosystems'
+          ].map((t) => (
+            <div class="rounded-3xl bg-white/5 px-5 py-4 text-sm text-white/75 ring-1 ring-white/10 backdrop-blur-sm">
+              {t}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" class="mx-auto max-w-6xl px-6 pb-24 pt-6 md:pb-32">
+        <div class="rounded-[32px] bg-white/5 p-10 ring-1 ring-white/10 backdrop-blur-sm">
+          <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            Vamos mapear seu fluxo e automatizar com governança
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-white/65">
+            Conte o contexto, o canal e o objetivo. Respondemos com um caminho claro: módulos, arquitetura e próximos
+            passos.
+          </p>
+          <div class="mt-8">
+            <a
+              href="mailto:hello@synora.app.br"
+              class="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90">
+              Entrar em Contato
+            </a>
+          </div>
+        </div>
+
+        <footer class="mt-10 flex flex-col gap-3 text-xs text-white/45 md:flex-row md:items-center md:justify-between">
+          <div>© Fiboops. All rights reserved.</div>
+          <div>Building intelligent operational ecosystems powered by AI.</div>
+        </footer>
+      </section>
+    </main>
+  </div>
 </BaseLayout>
 
