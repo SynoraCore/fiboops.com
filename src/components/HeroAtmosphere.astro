@@ -1,0 +1,41 @@
+---
+// Hero-only atmosphere: halo + wave bands + particles + subtle neural hints.
+// Scoped to hero to avoid scroll ghosting.
+---
+
+<div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+  <!-- Ultra soft operational halo behind the content -->
+  <div class="hero-halo"></div>
+
+  <!-- Diffuse glows (very low opacity) -->
+  <div class="hero-glow hero-glow--a"></div>
+  <div class="hero-glow hero-glow--b"></div>
+
+  <!-- Digital wave bands (top/bottom) -->
+  <svg class="hero-waves hero-waves--top" viewBox="0 0 1200 180" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="wg" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="rgba(61,90,254,0.35)" />
+        <stop offset="1" stop-color="rgba(0,212,255,0.22)" />
+      </linearGradient>
+    </defs>
+    <path class="hw" d="M0,98 C120,64 220,130 360,108 C520,82 600,116 760,102 C920,90 1040,60 1200,86 L1200,180 L0,180 Z" fill="none" stroke="url(#wg)" stroke-width="1" opacity="0.55"/>
+    <path class="hw" d="M0,124 C160,92 240,144 420,126 C600,106 660,144 820,128 C980,112 1090,92 1200,112" fill="none" stroke="rgba(245,247,251,0.25)" stroke-width="1" opacity="0.35"/>
+    <path class="hw" d="M0,146 C150,126 250,156 410,146 C580,134 660,160 820,150 C990,138 1080,126 1200,142" fill="none" stroke="rgba(0,212,255,0.18)" stroke-width="1" opacity="0.35"/>
+  </svg>
+
+  <svg class="hero-waves hero-waves--bottom" viewBox="0 0 1200 220" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="wg2" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="rgba(0,212,255,0.20)" />
+        <stop offset="1" stop-color="rgba(124,77,255,0.22)" />
+      </linearGradient>
+    </defs>
+    <path class="hw" d="M0,120 C140,160 260,78 420,118 C600,166 700,98 860,130 C1020,162 1120,140 1200,148" fill="none" stroke="url(#wg2)" stroke-width="1" opacity="0.55"/>
+    <path class="hw" d="M0,154 C160,186 260,128 440,154 C620,180 700,144 860,162 C1020,180 1120,176 1200,178" fill="none" stroke="rgba(245,247,251,0.22)" stroke-width="1" opacity="0.32"/>
+  </svg>
+
+  <!-- Sparse particles (CSS) -->
+  <div class="hero-particles"></div>
+</div>
+
