@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Background from '../components/Background.astro';
 import { messages } from '../i18n/messages';
 
 const m = messages['pt-BR'];
@@ -19,10 +18,9 @@ const modules = [
 ---
 
 <BaseLayout title={title} description={description} locale="pt-BR" path="/">
-  <div class="relative isolate bg-[#071827]">
+  <div class="relative bg-[#071827]">
 
-    <header class="relative z-10 min-h-dvh overflow-hidden">
-      <Background />
+    <header class="relative z-10 min-h-dvh">
       <div class="mx-auto max-w-6xl px-6">
         <nav class="flex items-center justify-between py-7">
           <div class="flex items-center gap-3">
