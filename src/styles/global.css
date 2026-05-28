@@ -70,7 +70,7 @@ body::after {
 
 /* Neural backdrop: near-invisible, slow drift */
 .nd {
-  opacity: 0.055; /* ~5% */
+  opacity: 0.07; /* ~7% */
   animation: nd-drift 38s ease-in-out infinite;
 }
 
@@ -103,11 +103,11 @@ body::after {
   position: absolute;
   left: 50%;
   top: 52%;
-  width: min(860px, 92vw);
-  height: min(860px, 92vw);
+  width: min(900px, 94vw);
+  height: min(900px, 94vw);
   transform: translate(-50%, -50%);
   border-radius: 999px;
-  opacity: 0.09;
+  opacity: 0.12;
   background:
     radial-gradient(circle at 50% 50%, rgba(245,247,251,0.22), transparent 42%),
     radial-gradient(circle at 50% 50%, rgba(0,212,255,0.22), transparent 58%),
@@ -145,7 +145,7 @@ body::after {
   position: absolute;
   left: 0;
   width: 100%;
-  opacity: 0.12; /* 3–8% perceived after strokes */
+  opacity: 0.16; /* still subtle, now perceptible */
 }
 
 .hero-waves--top { top: 0; height: 190px; }
@@ -156,7 +156,7 @@ body::after {
 .hero-particles {
   position: absolute;
   inset: 0;
-  opacity: 0.06;
+  opacity: 0.085;
   background-image:
     radial-gradient(1px 1px at 10% 18%, rgba(245,247,251,0.55), transparent 60%),
     radial-gradient(1px 1px at 22% 36%, rgba(0,212,255,0.35), transparent 60%),
