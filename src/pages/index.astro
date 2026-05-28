@@ -21,8 +21,25 @@ const modules = [
   <div class="relative bg-[#071827]">
 
     <header class="relative z-10 min-h-dvh">
+      <!-- Hero atmosphere (scoped) -->
+      <div class="pointer-events-none absolute inset-0 overflow-hidden">
+        <div class="absolute -left-48 -top-56 h-[720px] w-[720px] rounded-full opacity-70 blur-[48px]"
+          style="background: radial-gradient(circle at 30% 30%, rgba(61,90,254,0.55), transparent 60%);"></div>
+        <div class="absolute -right-64 top-24 h-[880px] w-[880px] rounded-full opacity-60 blur-[56px]"
+          style="background: radial-gradient(circle at 60% 40%, rgba(0,212,255,0.40), transparent 62%);"></div>
+        <div class="absolute left-[20%] -bottom-80 h-[980px] w-[980px] rounded-full opacity-45 blur-[64px]"
+          style="background: radial-gradient(circle at 50% 50%, rgba(124,77,255,0.28), transparent 65%);"></div>
+        <div class="absolute inset-0 opacity-[0.06]"
+          style="background-image: linear-gradient(to right, rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(circle at 30% 20%, rgba(0,0,0,1), rgba(0,0,0,0) 62%);"></div>
+      </div>
       <div class="mx-auto max-w-6xl px-6">
-        <nav class="flex items-center justify-between py-7">
+        <nav class="sticky top-0 z-20 -mx-6 flex items-center justify-between px-6 py-5">
+          <div class="absolute inset-x-0 top-0 -z-10 h-full border-b border-white/10 bg-[#071827]/80"></div>
+          <style>
+            @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+              nav > div:first-of-type { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+            }
+          </style>
           <div class="flex items-center gap-3">
             <div
               class="h-8 w-8 rounded-xl bg-white/5 ring-1 ring-white/10"
@@ -58,7 +75,7 @@ const modules = [
         <section class="relative pb-20 pt-16 md:pb-28 md:pt-24">
           <div class="max-w-3xl">
             <p
-              class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs text-white/70 ring-1 ring-white/10">
+              class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs text-white/75 ring-1 ring-white/10">
               <span class="h-1.5 w-1.5 rounded-full bg-cyan-300/90"></span>
               Enterprise futurista • IA operacional • Governance by design
             </p>
@@ -111,10 +128,22 @@ const modules = [
           </p>
         </div>
 
-        <div class="mt-12 grid gap-4 md:grid-cols-2">
+        <div class="relative mt-12 grid gap-4 md:grid-cols-2">
+          <!-- subtle constellation links -->
+          <svg class="pointer-events-none absolute inset-0 hidden h-full w-full opacity-[0.18] md:block" aria-hidden="true">
+            <defs>
+              <linearGradient id="link" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="rgba(61,90,254,0.35)" />
+                <stop offset="1" stop-color="rgba(0,212,255,0.25)" />
+              </linearGradient>
+            </defs>
+            <path d="M140 120 C 420 40, 540 80, 820 140" fill="none" stroke="url(#link)" stroke-width="1" />
+            <path d="M160 420 C 420 360, 560 360, 820 430" fill="none" stroke="url(#link)" stroke-width="1" />
+            <path d="M420 140 C 480 260, 520 300, 600 430" fill="none" stroke="rgba(124,77,255,0.22)" stroke-width="1" />
+          </svg>
           {modules.map((mod, idx) => (
             <div
-              class="group rounded-3xl bg-white/6 p-6 ring-1 ring-white/10 transition hover:bg-white/7"
+              class="surface glow-hover group rounded-3xl p-6"
             >
               <div class="flex items-center justify-between">
                 <h3 class="text-lg font-semibold text-white">{mod.name}</h3>
@@ -141,7 +170,7 @@ const modules = [
               e escaláveis.
             </p>
           </div>
-          <div class="rounded-3xl bg-white/6 p-6 ring-1 ring-white/10">
+          <div class="surface rounded-3xl p-6">
             <ul class="space-y-4 text-sm text-white/70">
               <li><span class="text-white">IA aplicada</span> — triagem, decisão e execução assistida.</li>
               <li><span class="text-white">Automação</span> — workflows, gatilhos, validações e filas.</li>
@@ -154,7 +183,7 @@ const modules = [
       </section>
 
       <section id="origin" class="relative isolate mx-auto max-w-6xl bg-[#071827] px-6 py-20 md:py-28">
-        <div class="rounded-4xl rounded-[32px] bg-white/6 p-10 ring-1 ring-white/10">
+        <div class="surface rounded-4xl rounded-[32px] p-10">
           <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">A evolução da Fiboops</h2>
           <p class="mt-4 text-base leading-relaxed text-white/65">
             A Synora nasceu da evolução da Fiboops, expandindo uma visão inicialmente focada em soluções financeiras
@@ -187,7 +216,7 @@ const modules = [
             'Operational Intelligence',
             'Digital Ecosystems'
           ].map((t) => (
-            <div class="rounded-3xl bg-white/6 px-5 py-4 text-sm text-white/75 ring-1 ring-white/10">
+            <div class="surface glow-hover rounded-3xl px-5 py-4 text-sm text-white/80">
               {t}
             </div>
           ))}
@@ -195,7 +224,7 @@ const modules = [
       </section>
 
       <section id="contact" class="relative isolate mx-auto max-w-6xl bg-[#071827] px-6 pb-24 pt-6 md:pb-32">
-        <div class="rounded-[32px] bg-white/6 p-10 ring-1 ring-white/10">
+        <div class="surface rounded-[32px] p-10">
           <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">
             Vamos mapear seu fluxo e automatizar com governança
           </h2>
