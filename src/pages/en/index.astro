@@ -8,7 +8,11 @@ const description =
   'AI-native intelligent infrastructure for automation, operational workflows, and digital ecosystems.';
 
 const modules = [
-  { name: 'Synora International', desc: 'Global expansion and interoperability layer for the ecosystem.' },
+  {
+    name: 'Synora International',
+    desc: 'Strategic capability that adapts Synora ecosystem solutions to operate natively across different countries, languages, currencies, and regulatory contexts.',
+    meta: 'Global governance • Local operations • Sustainable expansion'
+  },
   { name: 'Synora Core', desc: 'The central orchestration nucleus of the ecosystem.' },
   { name: 'Guardian AI', desc: 'Governance and operational validation across workflows.' },
   { name: 'Synora Mediation', desc: 'Digital mediation and operational restructuring.' },
@@ -128,7 +132,7 @@ const modules = [
               </div>
               <p class="mt-2 text-sm leading-relaxed text-white/65">{mod.desc}</p>
               <div class="mt-5 h-px w-full bg-gradient-to-r from-white/0 via-white/15 to-white/0"></div>
-              <p class="mt-4 text-xs text-white/50">Connected to Core • Operational flows • Governance layer</p>
+              <p class="mt-4 text-xs text-white/50">{mod.meta ?? 'Connected to Core • Operational flows • Governance layer'}</p>
             </div>
           ))}
         </div>
@@ -218,4 +222,3 @@ const modules = [
     </main>
   </div>
 </BaseLayout>
-

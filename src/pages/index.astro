@@ -10,7 +10,11 @@ const description =
   'Infraestrutura inteligente baseada em IA para automação, workflows operacionais e ecossistemas digitais.';
 
 const modules = [
-  { name: 'Synora Internacional', desc: 'Camada de expansão e interoperabilidade global do ecossistema.' },
+  {
+    name: 'Synora Internacional',
+    desc: 'Capacidade estratégica que adapta as soluções do ecossistema Synora para operar de forma nativa em diferentes países, idiomas, moedas e contextos regulatórios.',
+    meta: 'Governança global • Operação local • Expansão sustentável'
+  },
   { name: 'Synora Core', desc: 'Núcleo central do ecossistema.' },
   { name: 'Guardian AI', desc: 'Governança e validação operacional.' },
   { name: 'Synora Mediadora', desc: 'Mediação digital e reorganização operacional.' },
@@ -150,7 +154,7 @@ const modules = [
               <p class="mt-2 text-sm leading-relaxed text-white/65">{mod.desc}</p>
               <div class="mt-5 h-px w-full bg-gradient-to-r from-white/0 via-white/15 to-white/0"></div>
               <p class="mt-4 text-xs text-white/50">
-                Conectado ao Core • Fluxos operacionais • Camada de governança
+                {mod.meta ?? 'Conectado ao Core • Fluxos operacionais • Camada de governança'}
               </p>
             </div>
           ))}
