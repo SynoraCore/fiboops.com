@@ -11,7 +11,8 @@ const infrastructureModules = [
   {
     name: 'Synora Core',
     desc: 'Orquesta identidad, agentes, workflows, observabilidad, automatización y conocimiento compartido.',
-    meta: 'Identidad operativa • Automatización • Conocimiento compartido'
+    meta: 'Identidad operativa • Automatización • Conocimiento compartido',
+    action: 'Acceder al Core'
   },
   {
     name: 'Guardian AI',
@@ -167,6 +168,13 @@ const solutionModules = [
                   <p class="mt-2 text-sm leading-relaxed text-white/65">{mod.desc}</p>
                   <div class="mt-5 h-px w-full bg-gradient-to-r from-white/0 via-white/15 to-white/0"></div>
                   <p class="mt-4 text-xs text-white/50">{mod.meta}</p>
+                  {mod.action && (
+                    <a
+                      href="/core/"
+                      class="mt-5 inline-flex items-center justify-center rounded-2xl bg-white px-4 py-2 text-xs font-semibold text-slate-900 hover:bg-white/90">
+                      {mod.action}
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
