@@ -7,18 +7,45 @@ const title = 'Synora by Fiboops';
 const description =
   'Infraestructura inteligente nativa en IA para automatización, workflows operativos y ecosistemas digitales.';
 
-const modules = [
+const infrastructureModules = [
+  {
+    name: 'Synora Core',
+    desc: 'Orquesta identidad, agentes, workflows, observabilidad, automatización y conocimiento compartido.',
+    meta: 'Identidad operativa • Automatización • Conocimiento compartido'
+  },
+  {
+    name: 'Guardian AI',
+    desc: 'Responsable por conformidad, certificación de eventos críticos, auditoría, trazabilidad y confianza operativa.',
+    meta: 'Conformidad • Auditoría • Confianza operativa'
+  },
   {
     name: 'Synora Internacional',
     desc: 'Capacidad estratégica que adapta las soluciones del ecosistema Synora para operar de forma nativa en diferentes países, idiomas, monedas y contextos regulatorios.',
     meta: 'Gobernanza global • Operación local • Expansión sostenible'
+  }
+];
+
+const solutionModules = [
+  {
+    name: 'Synora Mediadora',
+    desc: 'Plataforma inteligente para mediación y reorganización financiera.',
+    meta: 'Mediación • Reorganización • Operación asistida'
   },
-  { name: 'Synora Core', desc: 'Núcleo central de orquestación del ecosistema.' },
-  { name: 'Guardian AI', desc: 'Gobernanza y validación operativa a lo largo de los workflows.' },
-  { name: 'Synora Mediadora', desc: 'Mediación digital y reorganización operativa.' },
-  { name: 'Synora Tourism', desc: 'Inteligencia aplicada a turismo, hospitalidad y servicios.' },
-  { name: 'Synora Audio', desc: 'Infraestructura de IA para la creator economy.' },
-  { name: 'Synora Finance', desc: 'Infraestructura financiera inteligente.' }
+  {
+    name: 'Synora Tourism',
+    desc: 'Inteligencia operativa, financiera y de relacionamiento para turismo y hospitalidad.',
+    meta: 'Turismo • Hospitalidad • Relacionamiento'
+  },
+  {
+    name: 'Synora Audio',
+    desc: 'Infraestructura para creación, protección, distribución y monetización de activos digitales.',
+    meta: 'Creación • Protección • Monetización'
+  },
+  {
+    name: 'Synora Finance',
+    desc: 'Infraestructura financiera inteligente para gestión, organización y automatización de procesos financieros.',
+    meta: 'Gestión • Organización • Automatización financiera'
+  }
 ];
 ---
 
@@ -106,12 +133,13 @@ const modules = [
         <div class="max-w-2xl">
           <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">Un ecosistema inteligente vivo</h2>
           <p class="mt-4 text-base leading-relaxed text-white/65">
-            Módulos especializados conectados por un núcleo común. Cada capa resuelve una parte de la operación — con
-            interoperabilidad, gobernanza y escala.
+            Synora no es una colección de productos independientes. Es un ecosistema inteligente sostenido por una
+            infraestructura común de gobernanza, interoperabilidad y conocimiento, sobre la cual diferentes soluciones
+            especializadas pueden construirse, evolucionar y operar de forma integrada.
           </p>
         </div>
 
-        <div class="relative mt-12 grid gap-5 md:grid-cols-2 ecosystem">
+        <div class="relative mt-12 space-y-8 ecosystem">
           <svg class="eco-links pointer-events-none absolute inset-0 hidden h-full w-full md:block" aria-hidden="true">
             <defs>
               <linearGradient id="link" x1="0" y1="0" x2="1" y2="1">
@@ -124,17 +152,45 @@ const modules = [
             <path d="M420 140 C 480 260, 520 300, 600 430" fill="none" stroke="rgba(124,77,255,0.22)" stroke-width="1" />
           </svg>
 
-          {modules.map((mod) => (
-            <div class="surface glow-hover group rounded-3xl p-7">
-              <div class="flex items-center justify-between">
-                <h3 class="text-lg font-semibold text-white">{mod.name}</h3>
-                <span class="text-xs text-white/45">módulo</span>
-              </div>
-              <p class="mt-2 text-sm leading-relaxed text-white/65">{mod.desc}</p>
-              <div class="mt-5 h-px w-full bg-gradient-to-r from-white/0 via-white/15 to-white/0"></div>
-              <p class="mt-4 text-xs text-white/50">{mod.meta ?? 'Conectado al Core • Flujos operativos • Capa de gobernanza'}</p>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200/70">Infraestructura del Ecosistema</p>
+            <p class="mt-2 max-w-3xl text-sm leading-relaxed text-white/55">
+              Componentes responsables por gobernanza, interoperabilidad, inteligencia operativa y expansión del ecosistema.
+            </p>
+            <div class="mt-5 grid gap-5 md:grid-cols-3">
+              {infrastructureModules.map((mod) => (
+                <div class="surface glow-hover group rounded-3xl p-7">
+                  <div class="flex items-center justify-between gap-4">
+                    <h3 class="text-lg font-semibold text-white">{mod.name}</h3>
+                    <span class="text-xs text-white/45">infra</span>
+                  </div>
+                  <p class="mt-2 text-sm leading-relaxed text-white/65">{mod.desc}</p>
+                  <div class="mt-5 h-px w-full bg-gradient-to-r from-white/0 via-white/15 to-white/0"></div>
+                  <p class="mt-4 text-xs text-white/50">{mod.meta}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">Soluciones Especializadas</p>
+            <p class="mt-2 max-w-3xl text-sm leading-relaxed text-white/55">
+              Plataformas y productos construidos sobre la infraestructura común de Synora.
+            </p>
+            <div class="mt-5 grid gap-5 md:grid-cols-2">
+              {solutionModules.map((mod) => (
+                <div class="surface glow-hover group rounded-3xl p-7">
+                  <div class="flex items-center justify-between gap-4">
+                    <h3 class="text-lg font-semibold text-white">{mod.name}</h3>
+                    <span class="text-xs text-white/45">solución</span>
+                  </div>
+                  <p class="mt-2 text-sm leading-relaxed text-white/65">{mod.desc}</p>
+                  <div class="mt-5 h-px w-full bg-gradient-to-r from-white/0 via-white/15 to-white/0"></div>
+                  <p class="mt-4 text-xs text-white/50">{mod.meta}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
